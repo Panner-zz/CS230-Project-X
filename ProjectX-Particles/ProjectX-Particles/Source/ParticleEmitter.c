@@ -223,6 +223,12 @@ static void ParticleEmitterRender(const Component* component)
 {
 	ParticleEmitter* emitter = (ParticleEmitter*)component;
 
+	if (!ParticleContainerIsEmpty(emitter->container)) {
+		DGL_Graphics_SetShaderMode(DGL_PSM_COLOR, DGL_VSM_DEFAULT); 
+		DGL_Graphics_SetCB_Alpha(1.0f);
+		DGL_Graphics_SetCB_TintColor(&emitter->tintColor);
+		ParticleContainerRender(emitter->container, emitter->mesh);
+	}
 	// @@@TEMPORARY:
 }
 
@@ -233,6 +239,21 @@ static void ParticleEmitterRender(const Component* component)
 //	 ParticleEmitter = Pointer to the ParticleEmitter component.
 static void ParticleEmitterEmit(ParticleEmitter* emitter)
 {
-	// @@@TEMPORARY:
-	UNREFERENCED_PARAMETER(emitter);
+	if (!ParticleContainerIsFull(emitter->container)) {
+		Particle* newParticle = ParticleContainerAllocateParticle(emitter->container);
+		if (newParticle) {
+			newParticle->lifetime = RandomRange(emitter->lifetimeMin, emitter->lifetimeMax);
+			Entity* entity = ComponentGetParent(&emitter->base); 
+			Transform* transform = EntityHas(entity, Transform);   
+			Vector2DSet(&newParticle->position, TransformGetTranslation(transform)->x, TransformGetTranslation(transform)->y);
+			Vector2DSet(&newParticle->scale, TransformGetScale(transform)->x, TransformGetScale(transform)->y);
+			newParticle->rotation = 0.0f;
+			float angle = RandomRangeFloat(0.0f, M_PI * 2.0f);
+			float speed = randomrangeFloat(emitter->speedMin, emitter->speedMax);
+			DGL_Vec2 velocity = { 0 };
+			Vector2DFromAngleRad(&velocity, angle);
+			Vector2DScale(&velocity, &velocity, speed);
+			Vector2DSet(&newParticle->velocity, velocity.x, velocity.y);
+		}
+	}
 }
