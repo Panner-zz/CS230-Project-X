@@ -1,0 +1,4 @@
+SpriteSource
+SpriteSourceCrosshair
+1 1
+Assets/Crosshair-White.png

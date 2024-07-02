@@ -1,0 +1,19 @@
+Entity
+Crosshair
+Transform
+0 0
+0
+32 32
+Sprite
+0
+1
+Mesh1x1
+SpriteSourceCrosshair
+0.0 0.0 1.0 0.0
+Physics
+0 0	// Acceleration
+0 0	// Velocity
+1.0	// Mass
+BehaviorCursor
+0.0
+100.0

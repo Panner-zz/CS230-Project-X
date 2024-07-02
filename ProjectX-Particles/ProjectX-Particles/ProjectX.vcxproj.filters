@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Engine">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Game">
+      <UniqueIdentifier>{2c842b5c-b5e2-4392-bd73-fa6eae9636ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Framework">
+      <UniqueIdentifier>{1c604fe7-2a01-4fea-86b7-a0e3408cce94}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Data">
+      <UniqueIdentifier>{17150d56-fcf8-4521-a32e-f00e4e871e03}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Data\Meshes">
+      <UniqueIdentifier>{69bcfa87-cb11-41ea-8067-d610d385e6d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Data\Archetypes">
+      <UniqueIdentifier>{9a911de7-6a61-40cc-ba14-e79a35af2665}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Data\SpriteSources">
+      <UniqueIdentifier>{7ed7542e-8ef4-4090-824e-c6bd39f0c510}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Behaviors">
+      <UniqueIdentifier>{21584f22-785f-4136-9bcc-a7d591c32b87}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Systems">
+      <UniqueIdentifier>{2a46b7df-da43-4c0c-a34e-f32ecfeb7de8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Systems\Particles">
+      <UniqueIdentifier>{cb8719ff-66d5-4c1f-8183-8738f4c3144c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\Particle.c">
+      <Filter>Engine\Systems\Particles</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ParticleContainer.c">
+      <Filter>Engine\Systems\Particles</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\stdafx.c">
+      <Filter>Engine\Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ParticleEmitter.c">
+      <Filter>Engine\Systems\Particles</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Main.c">
+      <Filter>Engine\Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\BehaviorCursor.c">
+      <Filter>Game\Behaviors</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Source\stdafx.h">
+      <Filter>Engine\Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\targetver.h">
+      <Filter>Engine\Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Framework\Source\Particle.h">
+      <Filter>Engine\Systems\Particles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Framework\Source\ParticleContainer.h">
+      <Filter>Engine\Systems\Particles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Framework\Source\ParticleEmitter.h">
+      <Filter>Engine\Systems\Particles</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Data\Mesh1x1.txt">
+      <Filter>Data\Meshes</Filter>
+    </Text>
+    <Text Include="Data\Crosshair.txt">
+      <Filter>Data\Archetypes</Filter>
+    </Text>
+    <Text Include="Data\SpriteSourceCrosshair.txt">
+      <Filter>Data\SpriteSources</Filter>
+    </Text>
+    <Text Include="Data\Explosion.txt">
+      <Filter>Data\Archetypes</Filter>
+    </Text>
+  </ItemGroup>
+</Project>

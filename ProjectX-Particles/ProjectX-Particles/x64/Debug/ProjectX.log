@@ -1,0 +1,39 @@
+﻿  stdafx.c
+  BehaviorCursor.c
+  Main.c
+  Particle.c
+  ParticleContainer.c
+  ParticleEmitter.c
+  Generating Code...
+Framework_d.lib(Component.obj) : warning LNK4099: PDB '' was not found with 'Framework_d.lib(Component.obj)' or at ''; linking object as if no debug info
+Framework_d.lib(Behavior.obj) : warning LNK4099: PDB '' was not found with 'Framework_d.lib(Behavior.obj)' or at ''; linking object as if no debug info
+Framework_d.lib(Entity.obj) : warning LNK4099: PDB '' was not found with 'Framework_d.lib(Entity.obj)' or at ''; linking object as if no debug info
+Framework_d.lib(EntityFactory.obj) : warning LNK4099: PDB '' was not found with 'Framework_d.lib(EntityFactory.obj)' or at ''; linking object as if no debug info
+Framework_d.lib(Physics.obj) : warning LNK4099: PDB '' was not found with 'Framework_d.lib(Physics.obj)' or at ''; linking object as if no debug info
+Framework_d.lib(Scene.obj) : warning LNK4099: PDB '' was not found with 'Framework_d.lib(Scene.obj)' or at ''; linking object as if no debug info
+Framework_d.lib(Stream.obj) : warning LNK4099: PDB '' was not found with 'Framework_d.lib(Stream.obj)' or at ''; linking object as if no debug info
+Framework_d.lib(Transform.obj) : warning LNK4099: PDB '' was not found with 'Framework_d.lib(Transform.obj)' or at ''; linking object as if no debug info
+Framework_d.lib(CheatSystem.obj) : warning LNK4099: PDB '' was not found with 'Framework_d.lib(CheatSystem.obj)' or at ''; linking object as if no debug info
+Framework_d.lib(Engine.obj) : warning LNK4099: PDB '' was not found with 'Framework_d.lib(Engine.obj)' or at ''; linking object as if no debug info
+Framework_d.lib(ParticleSystem.obj) : warning LNK4099: PDB '' was not found with 'Framework_d.lib(ParticleSystem.obj)' or at ''; linking object as if no debug info
+Framework_d.lib(PlatformSystem.obj) : warning LNK4099: PDB '' was not found with 'Framework_d.lib(PlatformSystem.obj)' or at ''; linking object as if no debug info
+Framework_d.lib(SceneSystem.obj) : warning LNK4099: PDB '' was not found with 'Framework_d.lib(SceneSystem.obj)' or at ''; linking object as if no debug info
+Framework_d.lib(stdafx.obj) : warning LNK4099: PDB '' was not found with 'Framework_d.lib(stdafx.obj)' or at ''; linking object as if no debug info
+Framework_d.lib(Animation.obj) : warning LNK4099: PDB '' was not found with 'Framework_d.lib(Animation.obj)' or at ''; linking object as if no debug info
+Framework_d.lib(ColliderCircle.obj) : warning LNK4099: PDB '' was not found with 'Framework_d.lib(ColliderCircle.obj)' or at ''; linking object as if no debug info
+Framework_d.lib(ColliderLine.obj) : warning LNK4099: PDB '' was not found with 'Framework_d.lib(ColliderLine.obj)' or at ''; linking object as if no debug info
+Framework_d.lib(Sprite.obj) : warning LNK4099: PDB '' was not found with 'Framework_d.lib(Sprite.obj)' or at ''; linking object as if no debug info
+Framework_d.lib(EntityContainer.obj) : warning LNK4099: PDB '' was not found with 'Framework_d.lib(EntityContainer.obj)' or at ''; linking object as if no debug info
+Framework_d.lib(Vector2D.obj) : warning LNK4099: PDB '' was not found with 'Framework_d.lib(Vector2D.obj)' or at ''; linking object as if no debug info
+Framework_d.lib(MeshLibrary.obj) : warning LNK4099: PDB '' was not found with 'Framework_d.lib(MeshLibrary.obj)' or at ''; linking object as if no debug info
+Framework_d.lib(SpriteSourceLibrary.obj) : warning LNK4099: PDB '' was not found with 'Framework_d.lib(SpriteSourceLibrary.obj)' or at ''; linking object as if no debug info
+Framework_d.lib(Trace.obj) : warning LNK4099: PDB '' was not found with 'Framework_d.lib(Trace.obj)' or at ''; linking object as if no debug info
+Framework_d.lib(Collider.obj) : warning LNK4099: PDB '' was not found with 'Framework_d.lib(Collider.obj)' or at ''; linking object as if no debug info
+Framework_d.lib(Matrix2D.obj) : warning LNK4099: PDB '' was not found with 'Framework_d.lib(Matrix2D.obj)' or at ''; linking object as if no debug info
+Framework_d.lib(ParticleScene.obj) : warning LNK4099: PDB '' was not found with 'Framework_d.lib(ParticleScene.obj)' or at ''; linking object as if no debug info
+Framework_d.lib(StubScene.obj) : warning LNK4099: PDB '' was not found with 'Framework_d.lib(StubScene.obj)' or at ''; linking object as if no debug info
+Framework_d.lib(Random.obj) : warning LNK4099: PDB '' was not found with 'Framework_d.lib(Random.obj)' or at ''; linking object as if no debug info
+Framework_d.lib(Mesh.obj) : warning LNK4099: PDB '' was not found with 'Framework_d.lib(Mesh.obj)' or at ''; linking object as if no debug info
+Framework_d.lib(SpriteSource.obj) : warning LNK4099: PDB '' was not found with 'Framework_d.lib(SpriteSource.obj)' or at ''; linking object as if no debug info
+  ProjectX.vcxproj -> C:\Users\ellio_u\OneDrive\Desktop\SUMMER 2024 - DIGIPEN\CS230\Project-X\ProjectX-Particles\ProjectX-Particles\x64\Debug\ProjectX.exe
+  1 File(s) copied

@@ -1,0 +1,24 @@
+Entity
+Explosion
+Transform
+0 0
+0
+8 8
+Sprite
+0
+1
+Mesh1x1
+SpriteSourceCrosshair
+1.0 1.0 1.0 0.0
+ParticleEmitter
+100
+500
+0
+1.0
+2.0
+125.0
+175.0
+8 8
+Mesh1x1
+1.0 0.25 0.25 1.0
+
