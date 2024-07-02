@@ -1,1 +1,2 @@
 C:\Users\ellio_u\OneDrive\Desktop\SUMMER 2024 - DIGIPEN\CS230\Project-X\ProjectX-Particles\ProjectX-Particles\x64\Debug\ProjectX.exe
+C:\Users\ellio_u\source\CS230-Project-X\ProjectX-Particles\ProjectX-Particles\x64\Debug\ProjectX.exe

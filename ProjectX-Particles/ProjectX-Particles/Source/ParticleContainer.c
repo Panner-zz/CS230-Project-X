@@ -128,8 +128,11 @@ bool ParticleContainerIsEmpty(ParticleContainer* container)
 {
 	assert(container && "ParticleContainerIsEmpty was passed a NULL pointer.");
 
-	// @@@TEMPORARY:
-	return true;
+	if (container->particleActive > 0) {
+		return true;
+	}
+
+	return false;
 }
 
 // Determines if the container is full (no free particles).
@@ -141,8 +144,11 @@ bool ParticleContainerIsFull(ParticleContainer* container)
 {
 	assert(container && "ParticleContainerIsFull was passed a NULL pointer.");
 
-	// @@@TEMPORARY:
-	return true;
+	if (container->particleFree == 0) {
+		return true;
+	}
+
+	return false;
 }
 
 // Allocate a particle in the ParticleContainer.
@@ -190,7 +196,15 @@ void ParticleContainerKillParticle(ParticleContainer* container, Particle* parti
 	assert(container);
 	assert(particle);
 
-	// @@@TEMPORARY:
+	if (container->areParticlesRecyclable) {
+		particle->lifetime = 0.0f;
+		container->particleFree++;
+	}
+	else {
+		particle->lifetime = -1.0f;
+	}
+
+	container->particleActive--;
 
 }
 
