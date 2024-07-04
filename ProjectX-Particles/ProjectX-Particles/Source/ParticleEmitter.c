@@ -179,10 +179,26 @@ static void ParticleEmitterRead(Component* component, Stream stream)
 {
 	if (component && stream)
 	{
-		// Cast the component pointer to a new pointer of type "ParticleEmitter*".
+		// Cast the component pointer to a new pointer of type "ParticleEmitter*".       
 		ParticleEmitter* emitter = (ParticleEmitter*)component;
-
-		// @@@TEMPORARY:
+		// //grab the max particles        
+		emitter->emitMax = StreamReadInt(stream);
+		//grab the emit rate        
+		emitter->emitRate = StreamReadFloat(stream);
+		//grad the recycle      
+		emitter->areParticlesRecyclable = StreamReadBoolean(stream);
+		emitter->lifetimeMin = StreamReadFloat(stream);
+		emitter->lifetimeMax = StreamReadFloat(stream); 
+		emitter->speedMin = StreamReadFloat(stream);
+		emitter->speedMax = StreamReadFloat(stream);
+		Vector2D scale;
+		StreamReadVector2D(stream, &scale);
+		emitter->scale = scale;
+		emitter->mesh = MeshLibraryBuild(StreamReadToken(stream));
+		DGL_Color tint;
+		StreamReadColor(stream, &tint);
+		emitter->tintColor = tint;
+		// @@@TEMPORARY:       
 		UNREFERENCED_PARAMETER(stream);
 	}
 
@@ -214,6 +230,19 @@ static void ParticleEmitterUpdate(Component* component, float dt)
 			ParticleContainerUpdate(emitter->container, dt);
 		}
 
+		//update the accumulator        
+		emitter->emitAccumulator += emitter->emitRate * dt; 
+
+		while (emitter->emitAccumulator >= 1) {            
+			//SPAWN A PARTICLE            
+			ParticleEmitterEmit(emitter);
+			//DECRAMENT THE ACCUMULATOR       
+			emitter->emitAccumulator--;    
+		}
+
+		if (ParticleContainerIsEmpty(emitter->container) && ParticleContainerIsFull(emitter->container))  
+			EntityDestroy(component->parent);
+
 		// @@@TEMPORARY:
 		UNREFERENCED_PARAMETER(dt);
 	}
@@ -242,14 +271,14 @@ static void ParticleEmitterEmit(ParticleEmitter* emitter)
 	if (!ParticleContainerIsFull(emitter->container)) {
 		Particle* newParticle = ParticleContainerAllocateParticle(emitter->container);
 		if (newParticle) {
-			newParticle->lifetime = RandomRange(emitter->lifetimeMin, emitter->lifetimeMax);
+			newParticle->lifetime = RandomRangeFloat(emitter->lifetimeMin, emitter->lifetimeMax);
 			Entity* entity = ComponentGetParent(&emitter->base); 
 			Transform* transform = EntityHas(entity, Transform);   
 			Vector2DSet(&newParticle->position, TransformGetTranslation(transform)->x, TransformGetTranslation(transform)->y);
 			Vector2DSet(&newParticle->scale, TransformGetScale(transform)->x, TransformGetScale(transform)->y);
 			newParticle->rotation = 0.0f;
-			float angle = RandomRangeFloat(0.0f, M_PI * 2.0f);
-			float speed = randomrangeFloat(emitter->speedMin, emitter->speedMax);
+			float angle = RandomRangeFloat(0.0f, (float)M_PI * 2.0f);
+			float speed = RandomRangeFloat(emitter->speedMin, emitter->speedMax);
 			DGL_Vec2 velocity = { 0 };
 			Vector2DFromAngleRad(&velocity, angle);
 			Vector2DScale(&velocity, &velocity, speed);

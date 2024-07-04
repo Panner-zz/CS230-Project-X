@@ -128,7 +128,7 @@ bool ParticleContainerIsEmpty(ParticleContainer* container)
 {
 	assert(container && "ParticleContainerIsEmpty was passed a NULL pointer.");
 
-	if (container->particleActive > 0) {
+	if (container->particleActive == 0) {
 		return true;
 	}
 

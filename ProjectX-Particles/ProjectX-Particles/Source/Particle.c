@@ -49,6 +49,16 @@
 //	 dt = Change in time (in seconds) since the last game loop.
 void ParticleUpdate(Particle* particle, ParticleContainer* container, float dt)
 {
+	if (particle->lifetime > 0.0f) {
+		particle->lifetime -= dt;
+		if (particle->lifetime > 0.0f) {
+			Vector2DScaleAdd(&particle->position, &particle->velocity, dt, &particle->position);
+		}
+		else {
+			ParticleContainerKillParticle(container, particle);
+		}
+	}
+
 	// @@@TEMPORARY:
 	UNREFERENCED_PARAMETER(particle);
 	UNREFERENCED_PARAMETER(container);
@@ -61,8 +71,10 @@ void ParticleUpdate(Particle* particle, ParticleContainer* container, float dt)
 //	 particle = Pointer to the Particle object.
 void ParticleRender(const Particle* particle, const Mesh* mesh)
 {
-	// @@@TEMPORARY:
-	UNREFERENCED_PARAMETER(particle);
+	if (particle->lifetime > 0.0f) {
+		DGL_Graphics_SetCB_TransformData(&particle->position, &particle->scale, particle->rotation);
+		MeshRender(mesh);
+	}
 }
 
 //------------------------------------------------------------------------------
